@@ -8,6 +8,7 @@ catkin_make
 source devel/setup.bash
 ```
 Now we have to upload the skectch of arduino named ROS_PUB.
+![image](https://user-images.githubusercontent.com/59718261/82405401-6c53f680-9a29-11ea-82f2-09707bc74733.png)
 
 Once uploaded the sketch , we have to launch the main.launch located in the rviz_visual package
 Copy this command in your terminal:

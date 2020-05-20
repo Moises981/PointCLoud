@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<robot name="reto_bot">
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="1.0 1.0 0.25"/>
+            </geometry>       
+        </visual>
+    </link>
+
+    <link name="waist_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.5"/>
+            </geometry>       
+        </visual>
+    </link>
+
+    <link name="mid_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.5"/>
+            </geometry>       
+        </visual>
+    </link>
+
+    <link name="holder_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.05" length="1.0"/>
+            </geometry>       
+        </visual>
+    </link>
+
+    <link name="arm_link1">
+        <visual>
+            <geometry>
+                <cylinder radius="0.05" length="1.0"/>
+            </geometry>       
+        </visual>
+    </link>
+
+    <link name="arm_link2">
+        <visual>
+            <geometry>
+                <cylinder radius="0.05" length="1.0"/>
+            </geometry>       
+        </visual>
+    </link>
+
+
+
+    <link name="sphereA_link">
+        <visual>
+            <geometry>
+                <sphere radius="0.1"/>
+            </geometry>       
+        </visual>
+    </link>
+
+    <link name="sphereB_link">
+        <visual>
+            <geometry>
+                <sphere radius="0.1"/>
+            </geometry>       
+        </visual>
+    </link>
+
+
+    <joint name="base_waist_joint" type="revolute">
+        <origin xyz="0.0 0.0 0.375" rpy="0.0 0.0 0.0"/>
+        <parent link="base_link"/>
+        <child link="waist_link"/>
+        <limit lower="-1.57" upper="1.57" effort="1.0" velocity="0.25"/>
+        <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+
+    <joint name="waist_mid_joint" type="revolute">
+        <origin xyz="0.0 0.0 0.25" rpy="1.57 0.0 0.0"/>
+        <parent link="waist_link"/>
+        <child link="mid_link"/>
+        <limit lower="-1.0" upper="1.57" effort="1.0" velocity="0.25"/>
+        <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+
+    <joint name="mid_holder_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0 0.0 0.0"/>
+        <parent link="mid_link"/>
+        <child link="holder_link"/>
+    </joint>
+
+    <joint name="holder_arm1_joint" type="fixed">
+        <origin xyz="0.45 0.0 0.5" rpy="0.0 1.57 0.0"/>
+        <parent link="holder_link"/>
+        <child link="arm_link1"/>
+    </joint>
+
+    <joint name="holder_arm2_joint" type="fixed">
+        <origin xyz="0.45 0.0 -0.5" rpy="0.0 1.57 0.0"/>
+        <parent link="holder_link"/>
+        <child link="arm_link2"/>
+    </joint>
+
+    <joint name="arm1_sphere_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.5" rpy="0.0 0.0 0.0"/>
+        <parent link="arm_link1"/>
+        <child link="sphereA_link"/>
+    </joint>
+
+    <joint name="arm2_sphere_joint" type="fixed">
+        <origin xyz="0.0 0.0 0.5" rpy="0.0 0.0 0.0"/>
+        <parent link="arm_link2"/>
+        <child link="sphereB_link"/>
+    </joint>
+
+
+    
+</robot>

@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="function_laser" type="laser_assembler_client.py" name="test_client" output="screen" />
+</launch>

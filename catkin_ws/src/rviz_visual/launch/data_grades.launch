@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="rviz_visual" type="data_to_int" name="converter" output="screen">   
+    </node>
+</launch>

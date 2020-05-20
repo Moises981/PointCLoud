@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="function_laser" type="pointcloud_reduction.py" name="resampler" output="screen" />
+</launch>

@@ -32,7 +32,7 @@ source devel/setup.bash
 ```
 Then we call to the service assemble_scans2 with the following command:
 ```bash
-roslaunch function_laser get_cloud.launch
+roslaunch rviz_visual get_cloud.launch
 ```
 After that we have to change the topic of the pointcloud for "/cloud_data".
 ![vs](https://user-images.githubusercontent.com/59718261/82404375-c1dad400-9a26-11ea-9130-cf5b894460ac.gif)
@@ -42,7 +42,7 @@ Now we can see the points that we generate when the servo of the robot was rotat
 We can create a topic that subscribes to our pointcloud assemble , then we can ignore some points with the variable resample , while the resample is bigget than befores , we will have less points. Lets's see that.
 Open another terminal and copy the following command:
 ```bash
-roslaunch function_laser cloud_reduction.launch
+roslaunch rviz_visual cloud_reduction.launch
 ```
 Then let's change the topic of the pointcloud on rviz.
 #### Resample=10:

@@ -2,6 +2,6 @@
 <launch>
 
     <include file="$(find rviz_visual)/launch/rviz.launch" />
-    <include file="$(find function_laser)/launch/cloud_data.launch" />
+    <include file="$(find rviz_visual)/launch/cloud_data.launch" />
 
 </launch>

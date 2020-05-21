@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="rviz_visual" type="pc_pub.py" name="PC" output="screen"/>
+    <node pkg="laser_assembler" type="point_cloud2_assembler" name="my_assembler" output="screen">
+        <remap from="cloud" to="/PointCloud"/>
+    	<param name="max_clouds" type="int" value="180"/>
+    	<param name="fixed_frame" type="string" value="base_link"/>
+    </node>
+
+</launch>

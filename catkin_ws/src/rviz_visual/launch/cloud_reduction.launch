@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="rviz_visual" type="pointcloud_reduction.py" name="resampler" output="screen" />
+</launch>

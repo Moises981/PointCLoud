@@ -1,15 +1,18 @@
-# PointCLoud
+# PointCloud
 ## Installation's steps:
 First it's important to compile the packages.
+### Compile the ros's packages
 ```bash
 catkin_make
 ```
 ```bash
 source devel/setup.bash
 ```
+### Upload sketch to arduino
 Now we have to upload the skectch of arduino named ROS_PUB.
-![image](https://user-images.githubusercontent.com/59718261/82405401-6c53f680-9a29-11ea-82f2-09707bc74733.png)
+![image](https://user-images.githubusercontent.com/59718261/82510083-513bc200-9acf-11ea-8caa-f6b4fd29abf8.png)
 
+### Launch the rviz and PointCloud message
 Once uploaded the sketch , we have to launch the main.launch located in the rviz_visual package
 Copy this command in your terminal:
 
@@ -19,6 +22,8 @@ roslaunch rviz_visual main.launch
 After that we'll see the RVIZ interface and the pointcloud.
 
 ![v](https://user-images.githubusercontent.com/59718261/82404194-437e3200-9a26-11ea-81c3-c2d63f6abe14.gif)
+
+### Launch the laser_assembler service client to get response of the service server
 
 Then we can accumulate the pointcloud while the servo is rotating , we will send 180 messages by each degree.
 To use the laser_assemble we have to put this in the terminal , but don' forget to put the following command everytime you use a new terminal.
